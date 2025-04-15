@@ -13,10 +13,11 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: #d3d3d3;
   background-image: var(--page-bg-image);
   background-attachment: fixed;
   font-variation-settings: "wght" var(--main-font-weight);
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font), fantasy;
 }
 
 .header {
@@ -26,9 +27,9 @@
   align-items: center;
   margin: 100px auto;
   gap: 20px;
-  width: clamp(375px, 100%, 700px);
+  inline-size: clamp(375px, 100%, 700px);
   background-color: var(--bg-color);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   text-align: center;
   padding: var(--header-padding);
   border: 2px #000 solid;
@@ -36,14 +37,14 @@
 
 .header__title {
   text-transform: uppercase;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--header-title-font-size);
   font-weight: 400;
   line-height: 100%;
 }
 
 .header__text {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--header-text-font-size);
   text-transform: uppercase;
 }
@@ -91,6 +92,7 @@
   width: 100%;
   display: block;
   object-fit: cover;
+  object-position: top left;
 }
 
 .card__button {
@@ -109,7 +111,6 @@
   right: calc(13px + (25 - 13) * ((100% - 375px) / (700 - 375)));
   font-size: 14px;
   line-height: 14px;
-  -webkit-text-stroke: 1px rgb(255, 255, 255);
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
@@ -128,46 +129,43 @@
 }
 
 .button {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--bg-color);
   font-family: var(--accent-font), fantasy;
   border: 2px solid rgb(0, 0, 0);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
 }
 
 .button::before {
-  background-color: rgb(255, 255, 255);
-  display: inline-block;
-  position: absolute;
+  background-color: #000;
   content: "";
-  height: 100%;
-  width: 0;
-  transition: width 0.5s ease-in-out;
-  mix-blend-mode: difference;
-  left: 0;
-  top: 0;
+  position: absolute;
+  inset: 0;
+  scale: 0 1;
+  transition: scale 0.5s ease;
+  transform-origin: left;
+  z-index: 0;
 }
 
 .button:focus-visible {
   box-shadow: 2px 2px 0 0 rgb(0, 0, 0);
-  transition: box-shadow 0.3s ease-in-out;
   outline: none;
 }
 
-.button:hover {
-  cursor: pointer;
-}
-
 .button:hover::before {
-  content: "";
-  width: 100%;
+  scale: 1 1;
 }
 
 .button__text {
-  font-family: var(--accent-font), sans-serif;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
   font-size: 14px;
   font-weight: 400;
   line-height: 90%;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #fff;
 }
 
 .card__like-button {
@@ -189,7 +187,6 @@
 .card__icon-button:focus-visible {
   outline: none;
   border: 2px solid rgb(0, 0, 0);
-  border-radius: 0;
 }
 
 .card__icon-button:hover {
@@ -221,7 +218,6 @@
   max-height: 35px;
 }
 
-
 .core {
   fill: transparent;
   transition: fill 0.3s linear 0.03s;
@@ -230,11 +226,6 @@
 .main-body {
   fill: transparent;
   transition: fill 0.3s linear 0s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon.is-liked {
@@ -247,8 +238,12 @@
   transition: fill 0.3s linear;
 }
 
+.contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s linear;
+}
+
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.06s;
 }
 
@@ -274,7 +269,7 @@
 .save-button {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
   font-family: var(--accent-font), fantasy;
@@ -291,7 +286,7 @@
   }
 }
 
-ialog__text {
+.dialog__text {
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 21px;
@@ -327,6 +322,7 @@ dialog:not([open]) {
   line-height: 13px;
   max-height: 38px;
   position: relative;
+  text-transform: uppercase;
 }
 
 ::backdrop {

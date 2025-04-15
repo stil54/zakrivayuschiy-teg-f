@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
     <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/apple-touch.png" />
   </head>
   <body class="page">
     <header class="header">
@@ -40,7 +41,7 @@
             Место для ваших воспоминаний о начале обучения.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -103,7 +104,7 @@
             Место для ваших воспоминаний о начале первого спринта.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart">
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -164,7 +165,7 @@
             Место для ваших воспоминаний об окончании первого спринта.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -227,7 +228,7 @@
             Место для ваших воспоминаний о начале второго спринта.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -291,7 +292,7 @@
             Место для ваших воспоминаний об окончании второго спринта.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -352,7 +353,7 @@
             Место для ваших воспоминаний о начале третьего спринта.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -415,7 +416,7 @@
             Место для ваших воспоминаний об окончании третьего спринта.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -480,7 +481,7 @@
             этой точке пути.
           </p>
           <div class="card__button">
-            <button type="button" class="card__icon-button">
+            <button type="button" class="card__icon-button" aria-label="heart" >
               <svg
                 aria-hidden="true"
                 class="like-icon"
@@ -537,13 +538,13 @@
         <svg class="dialog-icon" viewBox="0 0 39 39">
           <use href="./svg/sprite.svg#floopy"></use>
         </svg>
-        <h2 class="dialog__text">вставьте дискету, чтобы продолжить</h2>
+        <p class="dialog__text">вставьте дискету, чтобы продолжить</p>
         <button
           class="close button"
           type="button"
           onclick="window['dialog-id'].close();"
         >
-          <span class="button__text">ОК</span>
+          <span class="button__text">ок</span>
         </button>
       </dialog>
     </main>
