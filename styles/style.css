@@ -143,7 +143,7 @@
   position: absolute;
   inset: 0;
   scale: 0 1;
-  transition: scale 0.5s ease;
+  transition: scale 0.5s ease-in;
   transform-origin: left;
   z-index: 0;
 }
